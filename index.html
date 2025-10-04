@@ -2,43 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Diamonds</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="favicon.ico">
+  <title>TheDiamonds | IT Consulting</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    nav { background:#333; color:white; padding:1rem; text-align:center; }
-    nav a { color:white; margin:0 1rem; text-decoration:none; }
-    header { background:#f4f4f4; padding:5rem 1rem; text-align:center; }
-    footer { background:#333; color:white; text-align:center; padding:1rem; position:fixed; bottom:0; width:100%; }
+    html { scroll-behavior: smooth; }
+
+    /* Parallax hero */
+    .parallax { 
+      background-attachment: fixed; 
+      background-position: center; 
+      background-repeat: no-repeat; 
+      background-size: cover; 
+    }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease-in-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- Navbar -->
+  <header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold text-blue-600">TheDiamonds</div>
+      <ul class="flex space-x-6 text-gray-700 hidden md:flex">
+        <li><a href="#hero" class="hover:text-blue-600 transition">Home</a></li>
+        <li><a href="#services" class="hover:text-blue-600 transition">Services</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
+        <li><a href="#testimonials" class="hover:text-blue-600 transition">Testimonials</a></li>
+        <li><a href="#blog" class="hover:text-blue-600 transition">Blog</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 transition">Contact</a></li>
+      </ul>
+      <div class="md:hidden cursor-pointer" id="menu-btn">
+        <i class="fas fa-bars text-2xl"></i>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="hidden flex-col bg-white shadow-md w-full text-center md:hidden">
+      <li class="border-b"><a href="#hero" class="block py-2">Home</a></li>
+      <li class="border-b"><a href="#services" class="block py-2">Services</a></li>
+      <li class="border-b"><a href="#projects" class="block py-2">Projects</a></li>
+      <li class="border-b"><a href="#testimonials" class="block py-2">Testimonials</a></li>
+      <li class="border-b"><a href="#blog" class="block py-2">Blog</a></li>
+      <li><a href="#contact" class="block py-2">Contact</a></li>
+    </ul>
+  </header>
 
-<header>
-  <h1>Welcome to The Diamonds</h1>
-  <p>Your shining spot on the web!</p>
-</header>
+  <!-- Hero Section -->
+  <section id="hero" class="parallax h-screen flex flex-col justify-center items-center text-center text-white" style="background-image: url('https://images.unsplash.com/photo-1581093588401-7bda5f5f3f6d');">
+    <div class="bg-black/60 p-10 rounded-xl fade-in">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">We Deliver IT Excellence</h1>
+      <p class="text-xl md:text-2xl mb-6">Professional IT Consulting & Digital Transformation Solutions. Owned by Vikas.</p>
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition">Request a Consultation</a>
+    </div>
+  </section>
 
-<section id="about" style="padding:2rem;text-align:center;">
-  <h2>About Us</h2>
-  <p>We create value, sparkle, and shine in everything we do.</p>
-</section>
+  <!-- Services Section -->
+  <section id="services" class="py-20">
+    <h2 class="text-4xl font-bold text-blue-600 text-center mb-12 fade-in">Our Services</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-briefcase text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">IT Consulting</h3>
+        <p>Strategic IT advisory to optimize your business processes and technology.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-cloud text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Cloud Solutions</h3>
+        <p>Cloud architecture, migration, and management for Azure, AWS, and hybrid environments.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Cybersecurity</h3>
+        <p>Protect your data and infrastructure with advanced security & penetration testing.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-network-wired text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Networking</h3>
+        <p>Design, deploy, and manage enterprise network infrastructures.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Software Development</h3>
+        <p>Custom software and application solutions tailored to your business needs.</p>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:scale-105 transition transform fade-in">
+        <i class="fas fa-chart-line text-4xl text-blue-600 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Data Analytics</h3>
+        <p>Turn your business data into actionable insights for better decision-making.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" style="padding:2rem;text-align:center;">
-  <h2>Contact</h2>
-  <p>Email: contact@thediamonds.co.in</p>
-</section>
+  <!-- Projects / Portfolio Section -->
+  <section id="projects" class="py-20 bg-gray-50">
+    <h2 class="text-4xl font-bold text-blue-600 text-center mb-12 fade-in">Our Projects</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform fade-in">
+        <img src="https://images.unsplash.com/photo-1581091012184-6f7a1f9d5b2e" alt="Project 1">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Cloud Migration for Enterprise</h3>
+          <p>Successfully migrated a multinational company to a hybrid cloud solution.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform fade-in">
+        <img src="https://images.unsplash.com/photo-1581090700227-0df2eeed37dc" alt="Project 2">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Cybersecurity Overhaul</h3>
+          <p>Enhanced security posture and implemented advanced threat detection for clients.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform fade-in">
+        <img src="https://images.unsplash.com/photo-1581092334423-1f2f403f244d" alt="Project 3">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Custom ERP Development</h3>
+          <p>Developed a tailored enterprise resource planning system to streamline operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 The Diamonds. All rights reserved.
-</footer>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20">
+    <h2 class="text-4xl font-bold text-blue-600 text-center mb-12 fade-in">Client Testimonials</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:translate-y-2 transition transform fade-in">
+        <p class="italic mb-4">"TheDiamonds IT team transformed our infrastructure and improved system uptime dramatically."</p>
+        <h4 class="font-bold text-blue-600">Anurag Pandey, CEO</h4>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:translate-y-2 transition transform fade-in">
+        <p class="italic mb-4">"Professional, efficient, and knowledgeable consultants. Highly recommend for IT solutions."</p>
+        <h4 class="font-bold text-blue-600">Sudhanshu Singh, CTO</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-20 bg-gray-50">
+    <h2 class="text-4xl font-bold text-blue-600 text-center mb-12 fade-in">Insights & Blog</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform fade-in">
+        <img src="https://images.unsplash.com/photo-1581090840503-5e7c2d59fabc" alt="Blog 1">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Top IT Trends 2025</h3>
+          <p>Explore emerging technology trends shaping the IT consulting landscape.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition transform fade-in">
+        <img src="https://images.unsplash.com/photo-1581091010293-2c1f3d7e7f38" alt="Blog 2">
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-blue-600 mb-2">Cloud Security Best Practices</h3>
+          <p>Learn how to safeguard cloud environments and protect sensitive business data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <h2 class="text-4xl font-bold text-blue-600 text-center mb-12 fade-in">Contact Our Experts</h2>
+    <div class="max-w-lg mx-auto fade-in">
+      <form onsubmit="return validateForm()" class="flex flex-col gap-4">
+        <input type="text" id="name" placeholder="Your Name" class="p-3 border border-gray-300 rounded-lg focus:border-blue-600 outline-none" required>
+        <input type="email" id="email" placeholder="Your Email" class="p-3 border border-gray-300 rounded-lg focus:border-blue-600 outline-none" required>
+        <textarea id="message" rows="5" placeholder="Your Message" class="p-3 border border-gray-300 rounded-lg focus:border-blue-600 outline-none" required></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full font-semibold transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    &copy; 2025 TheDiamonds. Owned by Vikas. All Rights Reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+    // Fade-in effect on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+    // Contact form validation
+    function validateForm(){
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        alert('Please fill all fields.');
+        return false;
+      }
+      alert('Thank you! Your message has been sent.');
+      return true;
+    }
+  </script>
 
 </body>
 </html>
