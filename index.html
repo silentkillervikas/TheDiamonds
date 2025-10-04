@@ -1,31 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
   <title>The Diamonds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
-      color: #333;
-      text-align: center;
-      margin: 0;
-      padding: 50px;
-    }
-    h1 {
-      color: #0d47a1;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #555;
-    }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    nav { background:#333; color:white; padding:1rem; text-align:center; }
+    nav a { color:white; margin:0 1rem; text-decoration:none; }
+    header { background:#f4f4f4; padding:5rem 1rem; text-align:center; }
+    footer { background:#333; color:white; text-align:center; padding:1rem; position:fixed; bottom:0; width:100%; }
   </style>
 </head>
 <body>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
   <h1>Welcome to The Diamonds</h1>
-  <p>This is a simple static website hosted for free using GitHub Pages ✨</p>
-  <footer>© 2025 The Diamonds</footer>
+  <p>Your shining spot on the web!</p>
+</header>
+
+<section id="about" style="padding:2rem;text-align:center;">
+  <h2>About Us</h2>
+  <p>We create value, sparkle, and shine in everything we do.</p>
+</section>
+
+<section id="contact" style="padding:2rem;text-align:center;">
+  <h2>Contact</h2>
+  <p>Email: contact@thediamonds.co.in</p>
+</section>
+
+<footer>
+  &copy; 2025 The Diamonds. All rights reserved.
+</footer>
+
 </body>
 </html>
