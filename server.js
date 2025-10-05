@@ -1,30 +1,48 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-require("dotenv").config();
-const { Configuration, OpenAIApi } = require("openai");
+// server.js
+
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import fetch from "node-fetch"; // only if needed for calling OpenAI API
+
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
-
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-const configuration = new Configuration({ apiKey: process.env.OPENAI_API_KEY });
-const openai = new OpenAIApi(configuration);
+// ✅ Serve all frontend files from the "public" folder
+app.use(express.static("public"));
 
-app.post("/chat", async (req, res) => {
+// 🧠 Example route to handle chatbot requests
+app.post("/api/chat", async (req, res) => {
+  const userMessage = req.body.message;
+
   try {
-    const { message } = req.body;
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: message }]
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: userMessage }],
+      }),
     });
-    res.json({ reply: completion.data.choices[0].message.content });
+
+    const data = await response.json();
+    res.json({ reply: data.choices[0].message.content });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ reply: "Error: Could not get response" });
+    res.status(500).json({ error: "Something went wrong with the AI service." });
   }
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// ✅ Default route for all other requests (important for SPA)
+app.get("*", (req, res) => {
+  res.sendFile("index.html", { root: "public" });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
