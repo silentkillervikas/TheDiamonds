@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced AI Website</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Particles.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo-container">
+      <img src="Images/logo.png" alt="Logo" class="logo">
+      <h1>My Company</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div id="particles-js"></div>
+    <h2 class="hero-text">Welcome to <span class="typing"></span></h2>
+    <p>Delivering innovative solutions with modern technology.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card"><h3>Web Development</h3><p>Modern responsive websites.</p></div>
+      <div class="card"><h3>AI Integration</h3><p>Integrate AI solutions into your business.</p></div>
+      <div class="card"><h3>Consulting</h3><p>Professional IT and business consulting.</p></div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-items">
+      <div class="portfolio-item">Project 1</div>
+      <div class="portfolio-item">Project 2</div>
+      <div class="portfolio-item">Project 3</div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonials-container">
+      <div class="testimonial"><p>"Great service, very professional!"</p><span>- Client A</span></div>
+      <div class="testimonial"><p>"AI integration changed our workflow."</p><span>- Client B</span></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Floating Chatbot -->
+  <div id="chatbot-widget">
+    <div id="chatbot-icon">💬</div>
+    <div class="chat-container" id="chat-container">
+      <div id="chatbot-header">Chat with AI 🤖</div>
+      <div class="chat-box" id="chat-box"></div>
+      <div class="input-container">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="voice-btn">🎤</button>
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 My Company. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
