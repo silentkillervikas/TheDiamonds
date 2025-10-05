@@ -107,7 +107,7 @@ function removeTypingIndicator() {
 async function getBotResponse(message) {
   addTypingIndicator();
   try {
-    const response = await fetch("http://localhost:5000/chat", {
+    const response = await fetch("http://https://thediamonds.onrender.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
